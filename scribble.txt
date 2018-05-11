@@ -1,5 +1,0 @@
-Theme is Grateful Dead Songs
-Scarlet Begonias
-Shakedown Street
-I want to display an album cover at the top, then under it present the current song playing
-the website will play the song once you guess correctly
