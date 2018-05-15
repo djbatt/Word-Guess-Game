@@ -6,8 +6,11 @@ var userWins = 0;
 var userLosses = 0;
 var userAttempts = 10;
 var lettersGuessed = [];
+var letterPos = [];
 
 function startGame() {
+    document.onkeydown()
+
     document.getElementById("totalWins").innerText = userWins; // sets the html user wins to the amount of wins defined in js.
     document.getElementById("totalLosses").innerText = userLosses; // sets the html user wins to the amount of wins defined in js.
     document.getElementById("remainingGuesses").innerText = userAttempts; // sets the html user attempts to the amount of attempts in js
@@ -26,4 +29,10 @@ function startGame() {
     console.log(selectedWord);
     console.log(wordChoice);
 
+}
+
+document.onkeyup = function(event) { //Pressing a key is now the function, defined by the event parameter
+    if(event.keyCode >= 65 && event.keyCode <=90) { // if you press keys a-z run the script below.
+    script.script.script
+    }
 }
