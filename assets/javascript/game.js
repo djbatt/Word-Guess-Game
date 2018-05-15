@@ -1,50 +1,29 @@
-const maxAttempts = 12;
 var wordList = ["deadhead", "terrapin", "jerry", "tiedye", "stealie", "skeleton"];
+var selectedWord;
+var wordChoice = [];
+
 var userWins = 0;
 var userLosses = 0;
-var userAttempts = 0;
+var userAttempts = 10;
 var lettersGuessed = [];
-var wordChoice = [];
-var currentWordIndex;
 
 function startGame() {
-
-    pageStats();
-    winGame();
-    loseGame();
-
-    currentWordIndex = Math.floor(Math.random() * (wordList.length)); // Creates a number to represent the currentWordIndex
-
-    for (var i = 0; i < wordList[currentWordIndex].length; i++) {
-        wordChoice.push("_"); // Picks the word according to the index, and then pushes underscores according to the length of the word picked.
-    }
-
-    for (var i = 0; i < wordChoice.length; i++) { //Sets the currentWord ID elements text to be equal to the wordChoice
-        document.getElementById("currentWord").innerText += wordChoice[i];
-    }
-
-    console.log(currentWordIndex);
-    console.log(wordChoice);
-
-}
-
-function pageStats() {
-    userAttempts = maxAttempts; // sets the user attempts to the max, it will lower from here.
     document.getElementById("totalWins").innerText = userWins; // sets the html user wins to the amount of wins defined in js.
     document.getElementById("totalLosses").innerText = userLosses; // sets the html user wins to the amount of wins defined in js.
-    document.getElementById("remainingGuesses").innerText = userAttempts; // sets the html user attempts to the amount of attempts in js.
-    //document.getElementById("guessedLetters").innerText = lettersGuessed; // sets the guessed letter to our lettersGuessed variable
+    document.getElementById("remainingGuesses").innerText = userAttempts; // sets the html user attempts to the amount of attempts in js
 
-}
+    selectedWord = Math.floor(Math.random() * (wordList.length)); // selectedWord variable is now equal to a random number value selected from the wordList array.
 
-function winGame() {
-    if (wordChoice.indexOf("_") === -1) {
-        userWins++;
+    for (var i = 0; i < wordList[selectedWord].length; i++) { // loop until i is equal to the length of the selected word
+        wordChoice.push("_"); // Push underscores into the word choice array
     }
-}
 
-function loseGame() {
-    if (remainingGuesses <= 0) {
-        userLosses++;
+    for (var i = 0; i < wordChoice.length; i++) { // loop until i is equal to the length of the wordChoice variable.
+        document.getElementById("currentWord").innerText += wordChoice[i]; //change the inner text of the current to be the wordChoice array.
     }
+
+    
+    console.log(selectedWord);
+    console.log(wordChoice);
+
 }
