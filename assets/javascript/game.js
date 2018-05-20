@@ -32,7 +32,7 @@ function updatePage() {
     document.getElementById("remainingGuesses").innerText = user.attempts;
 }
 
-document.onkeyup = function() {
+document.onkeyup = function(event) {
     if(event.keyCode >= 65 && event.keyCode <=90) { // if you press keys a-z run the script below.
         updatePage();
     }
